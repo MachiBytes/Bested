@@ -4,3 +4,4 @@ This is just a personal project that allows me to keep track of best practices w
 ### Features
 - Clean Architecture ft. API, Application, Domain, and Infrastructure Layers
 - Scalar documentation
+- Serilog logging
