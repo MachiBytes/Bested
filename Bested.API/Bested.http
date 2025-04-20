@@ -1,0 +1,4 @@
+@BaseAddress = http://localhost:5001/api
+
+### Test
+GET http://localhost:5001/api/test
