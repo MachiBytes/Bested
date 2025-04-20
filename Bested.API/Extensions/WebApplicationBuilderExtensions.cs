@@ -1,17 +1,18 @@
 // Bested.API\Extensions\WebApplicationBuilderExtensions.cs
 using Serilog;
 
-namespace Bested.API.Extensions;
-
-public static class WebApplicationBuilderExtensions
+namespace Bested.API.Extensions
 {
-    public static void ExtendPresentation(this WebApplicationBuilder builder)
+    public static class WebApplicationBuilderExtensions
     {
-        builder.Host.UseSerilog((context, configuration) => 
-            configuration.ReadFrom.Configuration(context.Configuration)
-        );
+        public static void ExtendPresentation(this WebApplicationBuilder builder)
+        {
+            builder.Host.UseSerilog((context, configuration) => 
+                configuration.ReadFrom.Configuration(context.Configuration)
+            );
         
-        builder.Services.AddControllers();
-        builder.Services.AddOpenApi();
+            builder.Services.AddControllers();
+            builder.Services.AddOpenApi();
+        }
     }
 }

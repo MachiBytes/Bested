@@ -1,22 +1,23 @@
 // Bested.API\Configurations\ScalarConfiguration.cs
 using Scalar.AspNetCore;
 
-namespace Bested.API.Configurations;
-
-public static class ScalarConfiguration
+namespace Bested.API.Configurations
 {
-    public static void ConfigureScalar(this WebApplication app)
+    public static class ScalarConfiguration
     {
-        if (app.Environment.IsDevelopment())
+        public static void ConfigureScalar(this WebApplication app)
         {
-            app.MapOpenApi();
-            app.MapScalarApiReference(
-                endpointPrefix: "/", 
-                options => 
-                {
-                    options.WithTitle("Restaurants API");
-                }
-            );
+            if (app.Environment.IsDevelopment())
+            {
+                app.MapOpenApi();
+                app.MapScalarApiReference(
+                    endpointPrefix: "/", 
+                    options => 
+                    {
+                        options.WithTitle("Restaurants API");
+                    }
+                );
+            }
         }
     }
 }
